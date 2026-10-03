@@ -1,61 +1,61 @@
-# Simple Stock Flow · Sitio Público de Presentación
+# Simple Stock Flow · Public Presentation Site
 
-> **Prueba técnica SDD · Ficha ADSO 3413974**  
-> Sitio público estático de presentación de la solución *Simple Stock Flow*.
-
----
-
-## 1. ¿Qué es este repositorio y qué rol cumple en Simple Stock Flow?
-
-Este repositorio contiene la **página de aterrizaje estática** (*Landing Page*) de *Simple Stock Flow*.
-Cumple el rol de **portal público informativo** para presentar el producto, sus características funcionales, los fundamentos de arquitectura limpia (Onion/Hexagonal) y la metodología de desarrollo guiado por especificación (SDD) aplicada en la ficha ADSO 3413974.
-
-**Características no negociables:**
-- Construido en HTML5 semántico y CSS responsivo (móvil y escritorio).
-- **Cero llamadas a la API:** No realiza peticiones HTTP (sin `fetch`, sin `axios`), funcionando de forma 100% autónoma.
-- Idioma en español (`<html lang="es">`) con ortografía y tildes impecables (Artículo XI).
-- Acceso público sin requerir credenciales ni autenticación.
+> **SDD Technical Assessment · SENA ADSO Class 3413974**  
+> Static public presentation landing page for the *Simple Stock Flow* solution.
 
 ---
 
-## 2. ¿Cómo se ejecuta localmente?
+## 1. What is this repository and what role does it play in Simple Stock Flow?
 
-Dado que es un sitio 100% estático, no requiere compiladores ni contenedores obligatorios.
+This repository contains the **static landing page** for *Simple Stock Flow*.
+It serves as the **public information portal** to present the product, its functional features, clean architecture foundations (Onion/Hexagonal), and the Spec-Driven Development (SDD) methodology applied in class ADSO 3413974.
 
-### Opción 1: Abrir directamente en el navegador
-Hacer doble clic en `index.html` o abrirlo con cualquier navegador web moderno:
+**Non-negotiable features:**
+- Built using semantic HTML5 and responsive CSS (mobile and desktop).
+- **Zero API calls:** Executes no HTTP requests (no `fetch`, no `axios`), operating 100% autonomously.
+- English language (`<html lang="en">`) with clean typography and modern styling.
+- Public access without requiring user credentials or authentication.
+
+---
+
+## 2. How to run it locally?
+
+Because it is a 100% static website, it does not require compilers or mandatory containers.
+
+### Option 1: Open directly in the browser
+Double click on `index.html` or open it with any modern web browser:
 ```bash
 start index.html
 ```
 
-### Opción 2: Con servidor HTTP ligero (Python)
+### Option 2: Lightweight HTTP server (Python)
 ```bash
 python -m http.server 8085
 ```
-Abrir `http://localhost:8085` en el navegador.
+Open `http://localhost:8085` in your browser.
 
 ---
 
-## 3. Variables de entorno requeridas
+## 3. Required Environment Variables
 
-Este repositorio **no utiliza variables de entorno**, ya que es un entregable puramente estático que opera del lado del cliente sin dependencias de backend ni secretos.
-
----
-
-## 4. ¿Cómo se ejecutan las pruebas?
-
-La verificación de este repositorio consiste en:
-1. **Validación HTML5 y W3C:** Asegurar etiquetas semánticas correctas (`header`, `section`, `nav`, `footer`).
-2. **Prueba de Invariante de Red:** Verificar en las herramientas de desarrollo del navegador (pestaña Red / Network) que no se dispare ninguna petición hacia `/api/` o endpoints dinámicos.
-3. **Prueba de Responsividad:** Comprobar la correcta visualización en pantallas móviles (< 640px) y escritorio (>= 1024px).
+This repository **uses no environment variables**, as it is a purely client-side static deliverable with no backend dependencies or secrets.
 
 ---
 
-## 5. Decisiones técnicas relevantes tomadas durante la implementación
+## 4. How are tests executed?
 
-1. **Autonomía Total sin Dependencias de Red a la API:**
-   - En cumplimiento estricto del enunciado y el Artículo XI, el sitio no interactúa con el backend de Laravel ni con la base de datos MySQL, garantizando disponibilidad inmediata incluso si los servicios de API están apagados.
-2. **Diseño Moderno con Tailwind CSS:**
-   - Se utiliza el motor de Tailwind para lograr un aspecto visual profesional en modo oscuro, coherente con la paleta de colores de la aplicación SPA (`test-simple-stock-flow-app`).
-3. **Divulgación Integral del Ecosistema:**
-   - La página documenta de manera transparente los 6 repositorios que componen la prueba y explica los principios de la Arquitectura Onion implementada en el backend.
+Verification for this repository includes:
+1. **HTML5 and W3C Validation:** Verifying proper semantic tags (`header`, `section`, `nav`, `footer`).
+2. **Network Invariant Test:** Verifying in browser developer tools (Network tab) that no outbound requests are triggered towards `/api/` or dynamic endpoints.
+3. **Responsiveness Test:** Validating correct display across mobile screens (< 640px) and desktop viewports (>= 1024px).
+
+---
+
+## 5. Relevant Technical Decisions Taken During Implementation
+
+1. **Total Autonomy without API Dependencies:**
+   - In strict compliance with the project specification and Article XI, the site never interacts with the Laravel backend or MySQL database, ensuring instant availability even when API services are offline.
+2. **Modern Dark Mode Aesthetic with Tailwind CSS:**
+   - Leverages Tailwind's engine for a professional, dark-themed UI matching the color palette of the SPA web app (`test-simple-stock-flow-app`).
+3. **Comprehensive Ecosystem Showcase:**
+   - The landing page clearly showcases all 6 repositories comprising the solution and breaks down the 4-layer Onion Architecture implemented in the backend.
